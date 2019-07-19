@@ -24,5 +24,5 @@ describe('greeting' , function(){
         assert.equal(count.counter("Sipho"), count.counter());
 
       });
-
+      
 });

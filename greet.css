@@ -1,6 +1,7 @@
 body{
    
     background-color : bisque;
+    background-image: url(image2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -16,16 +17,17 @@ h1 {
 .name{
     justify-content: center;
     display: flex;
-
+    
 }
 input{
     margin-top: 3em;
+   
     
 }
 .langs{
     justify-content: center;
     display: flex;
-    font-size: 3em;
+    
 }
 .click{
     justify-content: center;
@@ -38,4 +40,5 @@ input{
 }
 .counterTotal{
 margin-top: 4em;
+padding: 0.3em;
 }

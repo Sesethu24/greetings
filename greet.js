@@ -1,24 +1,26 @@
-function Greeting() {
+function Greeting(data) {
 
-    let nameGreeted = {};
+    let nameGreeted = data || {};
 
     function language(name, lang) {
-        if(!lang) {
+
+       if (!lang) {
             return "Please select language!"
         }
+        var upperCaseName = name.charAt(0).toUpperCase() + name.slice(1);
 
         if (nameGreeted[name] === undefined) {
             nameGreeted[name] = 0
         }
 
         if (lang === "English") {
-            return "Hello " + name;
+            return "Hello " + upperCaseName;
         }
         else if (lang === "isiXhosa") {
-            return "Molo " + name;
+            return "Molo " + upperCaseName;
         }
         else if (lang === "Afrikaans") {
-            return "Hallo " + name;
+            return "Hallo " + upperCaseName;
         }
 
     }
@@ -30,7 +32,7 @@ function Greeting() {
         var k = Object.keys(nameGreeted)
         return k.length;
     }
-
+    console.log(nameGreeted)
     return {
         language,
         getName,
