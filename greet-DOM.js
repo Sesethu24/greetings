@@ -10,6 +10,7 @@ var retrievedObject = localStorage.getItem('greet') ? JSON.parse(localStorage.ge
 var greetMe = Greeting(retrievedObject);
 
 
+
 var retrievedObject = localStorage.getItem('counter');
 
 counterElem.innerHTML = greetMe.counter()

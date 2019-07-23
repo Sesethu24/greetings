@@ -19,10 +19,43 @@ describe('greeting' , function(){
         assert.equal(greet.getName('Inga'),greet.getName());
 
       });
-      it('should increment the counter when a new name is greeted' , function(){
+      it('should not increment the counter when the same name is entered more than once' , function(){
         var count = Greeting()
-        assert.equal(count.counter("Sipho"), count.counter());
+        count.language("Phozie", "English");
+        count.language("Phozie", "English");
+        count.language("Phozie", "English");
+
+        assert.equal(1, count.counter());
 
       });
+      it('should count how many people were greeted' , function(){
+        var count = Greeting()
+        count.language("Phozie", "English");
+        count.language("Sethu", "isiXhosa");
+        count.language("Ongie", "Afrikaans");
+
+        assert.equal(3, count.counter());
+
+      });
+
+      it('should return true when a valid name is passed', ()=> {
+        var factFun = Greeting();
+        var name = "Tommy"
+
+        assert.equal(true, factFun.allLetter(name));
+
+      })
+
+      it('should return false when numbers or strange characters are passed', ()=> {
+        var factFun = Greeting();
+        var name = '7776';
+
+        assert.equal(false, factFun.allLetter(name));
+
+      })
+
+
+
+
       
 });

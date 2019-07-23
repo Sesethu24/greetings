@@ -1,16 +1,30 @@
 function Greeting(data) {
 
-    let nameGreeted = data || {};
+    let namesGreeted = data || {};
+
+    function allLetter(input) {
+        var letters = /^[A-Za-z]+$/;
+        if (input.match(letters)) {
+            return true;
+        } else {
+            return false
+        }
+    }
 
     function language(name, lang) {
 
-       if (!lang) {
+        if (!lang) {
+
             return "Please select language!"
         }
+        else if (!allLetter(name)) {
+            return "Please enter name!"
+        }
+
         var upperCaseName = name.charAt(0).toUpperCase() + name.slice(1);
 
-        if (nameGreeted[name] === undefined) {
-            nameGreeted[name] = 0
+        if (namesGreeted[name] === undefined) {
+            namesGreeted[name] = 0
         }
 
         if (lang === "English") {
@@ -23,20 +37,21 @@ function Greeting(data) {
             return "Hallo " + upperCaseName;
         }
 
-    }
-    function getName() {
-        return nameGreeted;
-    }
 
+    }
     function counter() {
-        var k = Object.keys(nameGreeted)
+        var k = Object.keys(namesGreeted)
         return k.length;
     }
-    console.log(nameGreeted)
+    function getName() {
+        return namesGreeted;
+    }
+
     return {
         language,
         getName,
-        counter
+        counter,
+        allLetter
     }
 
 }
