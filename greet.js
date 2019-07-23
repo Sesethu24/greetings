@@ -13,20 +13,24 @@ function Greeting(data) {
 
     function language(name, lang) {
 
+        
+        var upperCaseName = name.charAt(0).toUpperCase() + name.slice(1);
+
+        var smallCaseName = name.toLowerCase()
         if (!lang) {
 
             return "Please select language!"
         }
         else if (!allLetter(name)) {
-            return "Please enter name!"
+            
+            return "Please enter a valid name!"
         }
-
-        var upperCaseName = name.charAt(0).toUpperCase() + name.slice(1);
-
-        if (namesGreeted[name] === undefined) {
-            namesGreeted[name] = 0
+        
+        if(name){
+              if (namesGreeted[smallCaseName] === undefined) {
+            namesGreeted[smallCaseName] = 0
         }
-
+    }
         if (lang === "English") {
             return "Hello " + upperCaseName;
         }
